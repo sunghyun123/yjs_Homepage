@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# 실제 도메인으로 교체 후 검색엔진에 등록하세요.
+Sitemap: https://YOUR-DOMAIN.example/sitemap.xml

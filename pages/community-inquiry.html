@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>온라인 문의 - 영전사</title>
+  <meta name="description" content="㈜영전사 온라인 문의입니다.">
+  <link href="../assets/img/favicon.png" rel="icon">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="../assets/css/main.css" rel="stylesheet">
+  <style>
+    body { font-family: 'Noto Sans KR', sans-serif; }
+    :root { --accent-color: #c62828; --nav-hover-color: #c62828; --nav-dropdown-hover-color: #c62828; }
+  </style>
+</head>
+<body class="starter-page-page">
+  <div id="site-header"></div>
+  <main class="main">
+    <div class="page-title" data-aos="fade">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">온라인 문의</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="../index.html">Home</a></li>
+            <li class="current">온라인 문의</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+    <section class="section">
+      <div class="container" data-aos="fade-up">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <p class="text-muted">서버 없이 제출 시 <strong>메일 프로그램</strong>이 열립니다. PHP 호스팅 시 <code>forms/contact.php</code> 연동을 검토하세요.</p>
+            <form id="mailto-inquiry-form" class="border rounded-3 p-4 bg-white shadow-sm">
+              <div class="row gy-3">
+                <div class="col-md-6">
+                  <label class="form-label" for="inq-name">이름</label>
+                  <input type="text" class="form-control" name="name" id="inq-name" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="inq-email">이메일</label>
+                  <input type="email" class="form-control" name="email" id="inq-email" required>
+                </div>
+                <div class="col-12">
+                  <label class="form-label" for="inq-phone">연락처</label>
+                  <input type="text" class="form-control" name="phone" id="inq-phone">
+                </div>
+                <div class="col-12">
+                  <label class="form-label" for="inq-subject">제목</label>
+                  <input type="text" class="form-control" name="subject" id="inq-subject" value="[홈페이지] 시공/견적 문의" required>
+                </div>
+                <div class="col-12">
+                  <label class="form-label" for="inq-msg">문의 내용</label>
+                  <textarea class="form-control" name="message" id="inq-msg" rows="6" required></textarea>
+                </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="agree" value="yes" id="inq-agree" required>
+                    <label class="form-check-label" for="inq-agree">개인정보 수집·이용에 동의합니다. (<a href="privacy.html">내용 보기</a>)</label>
+                  </div>
+                </div>
+                <div class="col-12 text-center">
+                  <button type="submit" class="btn btn-danger px-5">문의 보내기</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/php-email-form/validate.js"></script>
+  <script src="../assets/vendor/aos/aos.js"></script>
+  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../assets/js/site-shell.js" data-active="community-inquiry"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/inquiry-mailto.js"></script>
+</body>
+</html>
