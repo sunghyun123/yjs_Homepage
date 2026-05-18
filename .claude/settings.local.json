@@ -6,7 +6,10 @@
       "Bash(python3 -c ' *)",
       "PowerShell(python --version; python -c \"import pdfplumber; print\\('pdfplumber ok'\\)\" 2>$null; python -c \"import PyPDF2; print\\('PyPDF2 ok'\\)\" 2>$null; python -c \"import pymupdf; print\\('pymupdf ok'\\)\" 2>$null)",
       "PowerShell(pip install *)",
-      "Bash(claude doctor *)"
+      "Bash(claude doctor *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)"
     ]
   }
 }
