@@ -30,6 +30,6 @@
     });
   }
 
-  wire("mailto-inquiry-form", "admin@yjselect.com");
-  wire("mailto-careers-form", "admin@yjselect.com");
+  wire("mailto-inquiry-form", "marin5641@yjselect.com");
+  wire("mailto-careers-form", "marin5641@yjselect.com");
 })();
