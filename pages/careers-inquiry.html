@@ -38,7 +38,8 @@
       <div class="container" data-aos="fade-up">
         <div class="row justify-content-center">
           <div class="col-lg-8">
-            <form id="mailto-careers-form" class="border rounded-3 p-4 bg-white shadow-sm">
+            <form id="emailjs-careers-form" class="border rounded-3 p-4 bg-white shadow-sm">
+              <input type="hidden" name="form_type" value="채용문의">
               <div class="row gy-3">
                 <div class="col-md-6">
                   <label class="form-label" for="cr-name">이름</label>
@@ -88,6 +89,7 @@
   <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="../assets/js/site-shell.js" data-active="careers-inquiry"></script>
   <script src="../assets/js/main.js"></script>
-  <script src="../assets/js/inquiry-mailto.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="../assets/js/emailjs-form.js"></script>
 </body>
 </html>

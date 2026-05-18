@@ -52,7 +52,6 @@
     "<ul>" +
     '<li><a href="careers-announce.html" data-shell-active="careers-announce">채용공고</a></li>' +
     '<li><a href="careers-inquiry.html" data-shell-active="careers-inquiry">채용문의</a></li>' +
-    '<li><a href="careers-apply.html" data-shell-active="careers-apply">입사지원</a></li>' +
     "</ul></li>" +
     '<li><a href="privacy.html" data-shell-active="privacy">개인정보처리방침</a></li>' +
     "</ul>" +
