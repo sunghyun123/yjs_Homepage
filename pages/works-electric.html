@@ -18,6 +18,79 @@
   <style>
     body { font-family: 'Noto Sans KR', sans-serif; }
     :root { --accent-color: #c62828; --nav-hover-color: #c62828; --nav-dropdown-hover-color: #c62828; }
+
+    /* 갤러리 필터 버튼 */
+    .isotope-filters li {
+      cursor: pointer;
+      display: inline-block;
+      padding: 6px 20px;
+      border: 1px solid #ddd;
+      border-radius: 50px;
+      font-size: 0.875rem;
+      transition: all 0.2s;
+      user-select: none;
+    }
+    .isotope-filters li:hover,
+    .isotope-filters li.filter-active {
+      background: #c62828;
+      border-color: #c62828;
+      color: #fff;
+    }
+
+    /* 갤러리 카드 */
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+      position: relative;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .gallery-item:hover img { transform: scale(1.05); }
+
+    .gallery-item .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(198,40,40,0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s;
+    }
+    .gallery-item:hover .gallery-overlay { background: rgba(198,40,40,0.55); }
+    .gallery-overlay i {
+      color: #fff;
+      font-size: 2rem;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .gallery-item:hover .gallery-overlay i { opacity: 1; }
+
+    .gallery-caption {
+      padding: 10px 14px;
+      background: #fff;
+      font-size: 0.82rem;
+      color: #555;
+    }
+
+    /* placeholder */
+    .gallery-placeholder {
+      height: 220px;
+      background: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #bbb;
+      gap: 8px;
+    }
+    .gallery-placeholder i { font-size: 2.2rem; }
+    .gallery-placeholder span { font-size: 0.8rem; }
   </style>
 </head>
 <body class="starter-page-page">
@@ -36,16 +109,153 @@
       </div>
     </div>
 
-    <!-- 사진 준비 중 -->
     <section class="section">
       <div class="container" data-aos="fade-up">
         <h2 class="h4 mb-2">현장 사진</h2>
-        <p class="text-muted mb-5">수배전·동력설비, 내선/외선, 조명 등 전기 분야 시공 현장 사진입니다.</p>
-        <div class="text-center py-5">
-          <i class="bi bi-camera" style="font-size:3.5rem;color:#ccc;"></i>
-          <p class="mt-3 mb-1 fw-semibold" style="color:#555;">현장 사진을 준비 중입니다.</p>
-          <p class="text-muted small">빠른 시일 내에 실제 시공 사진으로 업데이트할 예정입니다.</p>
-        </div>
+        <p class="text-muted mb-4">수배전·동력설비, 내선/외선, 소방설비, 통신공사 등 시공 현장 사진입니다.</p>
+
+        <div class="isotope-layout" data-layout="masonry" data-default-filter="*" data-sort="original-order">
+
+          <!-- 필터 버튼 -->
+          <ul class="isotope-filters d-flex flex-wrap gap-2 list-unstyled mb-4" data-aos="fade-up">
+            <li data-filter="*" class="filter-active">전체</li>
+            <li data-filter=".filter-electric">전기공사</li>
+            <li data-filter=".filter-fire">소방설비</li>
+            <li data-filter=".filter-ict">통신공사</li>
+          </ul>
+
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="100">
+
+            <!--
+            ======================================================
+            사진 추가 방법:
+            1. assets/img/gallery/ 폴더에 사진 파일 넣기
+            2. 아래 placeholder 항목의 주석을 풀고 img 경로 수정
+            3. 분류에 맞게 filter-electric / filter-fire / filter-ict 설정
+            ======================================================
+            -->
+
+            <!-- ── 전기공사 ── -->
+
+            <!-- 실제 사진 예시: ../공사 사진.png -->
+            <div class="col-lg-4 col-md-6 isotope-item filter-electric">
+              <div class="gallery-item">
+                <a href="../공사 사진.png" class="glightbox" data-gallery="works" data-title="전기공사 현장">
+                  <img src="../공사 사진.png" alt="전기공사 현장">
+                  <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+                </a>
+                <div class="gallery-caption">전기공사 현장</div>
+              </div>
+            </div>
+
+            <!-- 전기공사 placeholder 1 -->
+            <div class="col-lg-4 col-md-6 isotope-item filter-electric">
+              <div class="gallery-item">
+                <!-- 사진 준비 시 아래 주석 해제 후 경로 수정
+                <a href="../assets/img/gallery/electric-02.jpg" class="glightbox" data-gallery="works" data-title="전기공사 현장">
+                  <img src="../assets/img/gallery/electric-02.jpg" alt="전기공사 현장">
+                  <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+                </a>
+                <div class="gallery-caption">전기공사 현장</div>
+                -->
+                <div class="gallery-placeholder">
+                  <i class="bi bi-image"></i>
+                  <span>전기공사 사진 예정</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 전기공사 placeholder 2 -->
+            <div class="col-lg-4 col-md-6 isotope-item filter-electric">
+              <div class="gallery-item">
+                <!-- 사진 준비 시 아래 주석 해제 후 경로 수정
+                <a href="../assets/img/gallery/electric-03.jpg" class="glightbox" data-gallery="works" data-title="전기공사 현장">
+                  <img src="../assets/img/gallery/electric-03.jpg" alt="전기공사 현장">
+                  <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+                </a>
+                <div class="gallery-caption">전기공사 현장</div>
+                -->
+                <div class="gallery-placeholder">
+                  <i class="bi bi-image"></i>
+                  <span>전기공사 사진 예정</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- ── 소방설비 ── -->
+
+            <!-- 소방설비 placeholder 1 -->
+            <div class="col-lg-4 col-md-6 isotope-item filter-fire">
+              <div class="gallery-item">
+                <!-- 사진 준비 시 아래 주석 해제 후 경로 수정
+                <a href="../assets/img/gallery/fire-01.jpg" class="glightbox" data-gallery="works" data-title="소방설비 현장">
+                  <img src="../assets/img/gallery/fire-01.jpg" alt="소방설비 현장">
+                  <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+                </a>
+                <div class="gallery-caption">소방설비 현장</div>
+                -->
+                <div class="gallery-placeholder">
+                  <i class="bi bi-image"></i>
+                  <span>소방설비 사진 예정</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 소방설비 placeholder 2 -->
+            <div class="col-lg-4 col-md-6 isotope-item filter-fire">
+              <div class="gallery-item">
+                <!-- 사진 준비 시 아래 주석 해제 후 경로 수정
+                <a href="../assets/img/gallery/fire-02.jpg" class="glightbox" data-gallery="works" data-title="소방설비 현장">
+                  <img src="../assets/img/gallery/fire-02.jpg" alt="소방설비 현장">
+                  <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+                </a>
+                <div class="gallery-caption">소방설비 현장</div>
+                -->
+                <div class="gallery-placeholder">
+                  <i class="bi bi-image"></i>
+                  <span>소방설비 사진 예정</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- ── 통신공사 ── -->
+
+            <!-- 통신공사 placeholder 1 -->
+            <div class="col-lg-4 col-md-6 isotope-item filter-ict">
+              <div class="gallery-item">
+                <!-- 사진 준비 시 아래 주석 해제 후 경로 수정
+                <a href="../assets/img/gallery/ict-01.jpg" class="glightbox" data-gallery="works" data-title="통신공사 현장">
+                  <img src="../assets/img/gallery/ict-01.jpg" alt="통신공사 현장">
+                  <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+                </a>
+                <div class="gallery-caption">통신공사 현장</div>
+                -->
+                <div class="gallery-placeholder">
+                  <i class="bi bi-image"></i>
+                  <span>통신공사 사진 예정</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 통신공사 placeholder 2 -->
+            <div class="col-lg-4 col-md-6 isotope-item filter-ict">
+              <div class="gallery-item">
+                <!-- 사진 준비 시 아래 주석 해제 후 경로 수정
+                <a href="../assets/img/gallery/ict-02.jpg" class="glightbox" data-gallery="works" data-title="통신공사 현장">
+                  <img src="../assets/img/gallery/ict-02.jpg" alt="통신공사 현장">
+                  <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+                </a>
+                <div class="gallery-caption">통신공사 현장</div>
+                -->
+                <div class="gallery-placeholder">
+                  <i class="bi bi-image"></i>
+                  <span>통신공사 사진 예정</span>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- /isotope-container -->
+        </div><!-- /isotope-layout -->
       </div>
     </section>
 
