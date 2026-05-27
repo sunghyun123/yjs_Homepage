@@ -16,7 +16,12 @@
     const selectBody = document.querySelector('body');
     const selectHeader = document.querySelector('#header');
     if (!selectHeader.classList.contains('scroll-up-sticky') && !selectHeader.classList.contains('sticky-top') && !selectHeader.classList.contains('fixed-top')) return;
-    window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
+    // Hysteresis: add at 120px, remove at 60px — prevents oscillation at the boundary
+    if (window.scrollY > 120) {
+      selectBody.classList.add('scrolled');
+    } else if (window.scrollY < 60) {
+      selectBody.classList.remove('scrolled');
+    }
   }
 
   document.addEventListener('scroll', toggleScrolled);
