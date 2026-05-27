@@ -21,7 +21,7 @@
     '<div class="container d-flex justify-content-center justify-content-md-between">' +
     '<div class="contact-info d-flex align-items-center">' +
     '<i class="bi bi-envelope d-flex align-items-center"><a href="mailto:marin5641@yjselect.com">marin5641@yjselect.com</a></i>' +
-    '<i class="bi bi-phone d-flex align-items-center ms-4"><span>대표전화: 031-457-9286</span></i>' +
+    '<i class="bi bi-phone d-flex align-items-center ms-4"><span>대표전화: 031-457-8286</span></i>' +
     "</div></div></div>" +
     '<div class="branding d-flex align-items-center">' +
     '<div class="container position-relative d-flex align-items-center justify-content-between">' +
@@ -68,7 +68,7 @@
     '<div class="footer-contact pt-1">' +
     "<p>상호명 : (주)영전사 | 대표자 : 김명호 | 사업자등록번호 : 123-86-17491</p>" +
     "<p>주소 : 경기도 군포시 건건로 243-2</p>" +
-    "<p><strong>대표번호 :</strong> 031-457-9286 &nbsp;|&nbsp; <strong>Email :</strong> marin5641@yjselect.com</p>" +
+    "<p><strong>대표번호 :</strong> 031-457-8286 &nbsp;|&nbsp; <strong>Email :</strong> marin5641@yjselect.com</p>" +
     '<p class="small mb-0"><a href="privacy.html">개인정보처리방침</a></p>' +
     "</div></div></div></div>" +
     '<div class="container copyright text-center mt-4">' +
