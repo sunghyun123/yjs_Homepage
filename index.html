@@ -73,28 +73,27 @@
        HEADER
     ================================================================ */
     .header .topbar {
-      background-color: var(--charcoal) !important;
+      background-color: var(--red) !important;
     }
     .header .branding {
       border-bottom: 3px solid var(--red);
       padding: 8px 0;
+      background: #fff;
     }
 
     /* ================================================================
-       HERO
+       HERO  (레드 + 화이트)
     ================================================================ */
     #hero.hero {
-      min-height: 88vh !important;
-      padding: 80px 0 160px !important;
-      background: var(--navy);
+      min-height: 66vh !important;
+      padding: 50px 0 78px !important;
+      background: #fff;
       z-index: 1;
     }
+    /* 우측 장식 사선 — 연한 빨강 영역 */
     #hero.hero::before {
-      background: linear-gradient(
-        110deg,
-        rgba(0,8,20,0.72) 0%,
-        rgba(0,8,20,0.45) 100%
-      ) !important;
+      background: linear-gradient(135deg, #fff5f5 0%, #fde8e8 100%) !important;
+      clip-path: polygon(28% 0%, 100% 0%, 100% 100%, 12% 100%);
     }
 
     .hero-label {
@@ -118,18 +117,18 @@
       margin-bottom: 18px;
     }
     #hero h1 {
-      font-size: 52px !important;
+      font-size: 48px !important;
       font-weight: 900 !important;
       line-height: 1.18 !important;
-      color: #fff !important;
+      color: #1c1c2c !important;
       word-break: keep-all;
       margin-bottom: 18px !important;
     }
     #hero h1 .hl { color: var(--red); }
     #hero .hero-sub {
-      font-size: 16px !important;
+      font-size: 15.5px !important;
       font-weight: 400;
-      color: rgba(255,255,255,0.75) !important;
+      color: #666 !important;
       line-height: 1.8;
       margin-bottom: 30px !important;
     }
@@ -142,7 +141,7 @@
       color: #fff;
       font-size: 15px;
       font-weight: 700;
-      padding: 14px 30px;
+      padding: 13px 28px;
       border-radius: 3px;
       text-decoration: none;
       border: 2px solid var(--red);
@@ -154,32 +153,31 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      border: 2px solid rgba(255,255,255,0.45);
-      color: #fff;
+      border: 2px solid #1c1c2c;
+      color: #1c1c2c;
       font-size: 15px;
       font-weight: 600;
-      padding: 12px 26px;
+      padding: 11px 24px;
       border-radius: 3px;
       text-decoration: none;
-      transition: border-color 0.2s;
+      transition: border-color 0.2s, color 0.2s;
     }
-    .hero-btn-outline:hover { border-color: #fff; color: #fff; }
+    .hero-btn-outline:hover { border-color: var(--red); color: var(--red); }
 
-    /* Phone CTA Box */
+    /* Phone CTA Box — 레드 배경 고대비 */
     .hero-phone-box {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-left: 5px solid var(--red);
+      background: var(--red);
+      border: none;
       border-radius: 4px;
       padding: 26px 28px 22px;
-      backdrop-filter: blur(6px);
       max-width: 320px;
+      box-shadow: 0 12px 40px rgba(198,40,40,0.30);
     }
     .phone-badge {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: var(--red);
+      background: rgba(255,255,255,0.18);
       color: #fff;
       font-size: 11px;
       font-weight: 700;
@@ -201,19 +199,19 @@
     .phone-hours {
       display: block;
       font-size: 12.5px;
-      color: rgba(255,255,255,0.5);
+      color: rgba(255,255,255,0.72);
       line-height: 1.7;
     }
     .phone-divider {
       border: 0;
-      border-top: 1px solid rgba(255,255,255,0.10);
+      border-top: 1px solid rgba(255,255,255,0.22);
       margin: 16px 0;
     }
     .phone-email-link {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      color: rgba(255,255,255,0.55);
+      color: rgba(255,255,255,0.80);
       font-size: 12.5px;
       font-weight: 600;
       text-decoration: none;
@@ -222,37 +220,39 @@
     .phone-email-link:hover { color: #fff; }
 
     @media (max-width: 992px) {
-      #hero.hero { padding: 60px 0 120px !important; min-height: 70vh !important; }
-      #hero h1 { font-size: 36px !important; }
-      .hero-phone-box { margin-top: 24px; max-width: 100%; }
-      .phone-number { font-size: 30px; }
+      #hero.hero { padding: 40px 0 70px !important; min-height: 55vh !important; }
+      #hero h1 { font-size: 32px !important; }
+      .hero-phone-box { margin-top: 20px; max-width: 100%; }
+      .phone-number { font-size: 28px; }
+      .quick-nav-section { margin-top: -50px; }
     }
     @media (max-width: 576px) {
-      #hero.hero { padding: 40px 0 100px !important; }
-      #hero h1 { font-size: 26px !important; line-height: 1.3 !important; }
-      .phone-number { font-size: 26px; }
+      #hero.hero { padding: 30px 0 60px !important; }
+      #hero h1 { font-size: 24px !important; line-height: 1.3 !important; }
+      .phone-number { font-size: 24px; }
+      .quick-nav-section { margin-top: -36px; }
     }
 
     /* ================================================================
-       QUICK-NAV OVERLAP CARDS
+       QUICK-NAV OVERLAP CARDS  (압축 · 화이트 테마)
     ================================================================ */
     .quick-nav-section {
       position: relative;
       z-index: 10;
-      margin-top: -90px;
+      margin-top: -66px;
       padding: 0 !important;
       background: transparent !important;
     }
     .quick-nav-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.32);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.13);
     }
     .qcard {
-      background: var(--dark-card);
-      border-top: 5px solid var(--red);
-      border-right: 1px solid rgba(255,255,255,0.06);
-      padding: 28px 22px 38px;
+      background: #fff;
+      border-top: 4px solid var(--red);
+      border-right: 1px solid #ebebeb;
+      padding: 16px 18px 22px;
       text-decoration: none !important;
       display: flex;
       flex-direction: column;
@@ -262,60 +262,62 @@
     }
     .qcard:last-child { border-right: none; }
     .qcard:hover {
-      background: var(--red-dark);
-      transform: translateY(-8px);
-      box-shadow: 0 16px 36px rgba(155,28,28,0.45);
+      background: var(--red);
+      transform: translateY(-5px);
+      box-shadow: 0 12px 28px rgba(155,28,28,0.30);
       text-decoration: none !important;
     }
     .qcard-icon {
-      font-size: 36px;
+      font-size: 28px;
       color: var(--red);
-      margin-bottom: 14px;
+      margin-bottom: 8px;
       transition: color 0.22s;
     }
     .qcard:hover .qcard-icon { color: #fff; }
     .qcard-title {
-      font-size: 18px;
+      font-size: 15px;
       font-weight: 800;
-      color: #fff;
-      margin-bottom: 6px;
+      color: #1c1c2c;
+      margin-bottom: 3px;
       line-height: 1.3;
+      transition: color 0.22s;
     }
+    .qcard:hover .qcard-title { color: #fff; }
     .qcard-desc {
-      font-size: 12.5px;
-      color: rgba(255,255,255,0.50);
-      line-height: 1.6;
+      font-size: 11.5px;
+      color: #999;
+      line-height: 1.5;
       transition: color 0.22s;
     }
     .qcard:hover .qcard-desc { color: rgba(255,255,255,0.82); }
     .qcard-arrow {
       position: absolute;
-      bottom: 18px;
-      right: 18px;
-      font-size: 20px;
-      color: rgba(255,255,255,0.18);
+      bottom: 14px;
+      right: 14px;
+      font-size: 17px;
+      color: rgba(0,0,0,0.15);
       transition: color 0.22s, right 0.22s;
     }
-    .qcard:hover .qcard-arrow { color: rgba(255,255,255,0.72); right: 13px; }
+    .qcard:hover .qcard-arrow { color: rgba(255,255,255,0.72); right: 10px; }
 
     @media (max-width: 992px) {
       .quick-nav-grid { grid-template-columns: repeat(2, 1fr); }
-      .qcard { border-bottom: 1px solid rgba(255,255,255,0.07); }
-      .quick-nav-section { margin-top: -50px; }
+      .qcard { border-bottom: 1px solid #ebebeb; }
+      .quick-nav-section { margin-top: -40px; }
     }
     @media (max-width: 480px) {
-      .quick-nav-section { margin-top: -28px; }
-      .qcard { padding: 20px 16px 32px; }
-      .qcard-icon { font-size: 28px; }
-      .qcard-title { font-size: 15px; }
+      .quick-nav-section { margin-top: -24px; }
+      .qcard { padding: 14px 14px 20px; }
+      .qcard-icon { font-size: 24px; }
+      .qcard-title { font-size: 13px; }
     }
 
     /* ================================================================
-       STATS DASHBOARD
+       STATS DASHBOARD  (레드 배경)
     ================================================================ */
     .stats-dash {
-      background: var(--navy);
-      padding: 44px 0 38px !important;
+      background: var(--red);
+      padding: 10px 0 8px !important;
       position: relative;
     }
     .stats-dash::before {
@@ -323,10 +325,10 @@
       position: absolute;
       top: 0; left: 0; right: 0;
       height: 3px;
-      background: linear-gradient(to right, var(--red) 0%, #ff6b6b 50%, var(--red) 100%);
+      background: rgba(255,255,255,0.25);
     }
     .swidget {
-      padding: 14px 20px;
+      padding: 4px 14px;
       text-align: center;
       position: relative;
     }
@@ -335,39 +337,39 @@
       position: absolute;
       left: 0; top: 15%; bottom: 15%;
       width: 1px;
-      background: rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.22);
     }
     .swidget-num {
       display: block;
-      font-size: 60px;
+      font-size: 36px;
       font-weight: 900;
-      color: var(--red);
+      color: #fff;
       line-height: 1;
-      letter-spacing: -2px;
+      letter-spacing: -1.5px;
     }
-    .swidget-unit { font-size: 30px; font-weight: 900; letter-spacing: 0; }
+    .swidget-unit { font-size: 18px; font-weight: 900; letter-spacing: 0; }
     .swidget-label {
       display: block;
-      font-size: 13px;
+      font-size: 11.5px;
       font-weight: 600;
-      color: rgba(255,255,255,0.68);
-      margin-top: 10px;
-      letter-spacing: 0.2px;
+      color: rgba(255,255,255,0.88);
+      margin-top: 4px;
+      letter-spacing: 0.1px;
     }
     .swidget-sub {
       display: block;
-      font-size: 11px;
-      color: rgba(255,255,255,0.30);
-      margin-top: 5px;
+      font-size: 10px;
+      color: rgba(255,255,255,0.65);
+      margin-top: 2px;
     }
 
     @media (max-width: 768px) {
-      .swidget-num { font-size: 42px; }
-      .swidget-unit { font-size: 22px; }
+      .swidget-num { font-size: 28px; }
+      .swidget-unit { font-size: 15px; }
     }
     @media (max-width: 480px) {
-      .swidget-num { font-size: 34px; }
-      .swidget-unit { font-size: 18px; }
+      .swidget-num { font-size: 24px; }
+      .swidget-unit { font-size: 13px; }
     }
 
     /* ================================================================
@@ -488,11 +490,17 @@
     <!-- ============================================================
          1. HERO
     ============================================================ -->
-    <section id="hero" class="hero section dark-background">
+    <section id="hero" class="hero section">
 
-      <video class="hero-video-bg" autoplay muted loop playsinline poster="assets/img/hero-bg.jpg">
-        <source src="assets/video/intro.mp4" type="video/mp4">
-      </video>
+      <!--
+        [동영상 교체 방법]
+        아래 주석을 해제하고 assets/video/ 폴더에 새 동영상 파일을 저장하세요.
+        동영상 추가 시 #hero.hero 배경을 투명하게, ::before overlay를 어둡게 조정해야 합니다.
+
+        <video class="hero-video-bg" autoplay muted loop playsinline poster="assets/img/hero-bg.jpg">
+          <source src="assets/video/새동영상파일명.mp4" type="video/mp4">
+        </video>
+      -->
 
       <div class="container">
         <div class="row gy-4 align-items-center">

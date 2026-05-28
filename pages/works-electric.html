@@ -19,22 +19,22 @@
     body { font-family: 'Noto Sans KR', sans-serif; }
     :root { --accent-color: #c62828; --nav-hover-color: #c62828; --nav-dropdown-hover-color: #c62828; }
 
-    /* 갤러리 카드 */
+    /* ── 기본 갤러리 카드 ── */
     .gallery-item {
       overflow: hidden;
       border-radius: 8px;
       box-shadow: 0 3px 12px rgba(0,0,0,0.08);
       position: relative;
+      background: #fff;
     }
     .gallery-item img {
       width: 100%;
-      height: 220px;
+      height: 240px;
       object-fit: cover;
       display: block;
       transition: transform 0.4s ease;
     }
     .gallery-item:hover img { transform: scale(1.05); }
-
     .gallery-item .gallery-overlay {
       position: absolute;
       inset: 0;
@@ -44,23 +44,120 @@
       justify-content: center;
       transition: background 0.3s;
     }
-    .gallery-item:hover .gallery-overlay { background: rgba(198,40,40,0.55); }
+    .gallery-item:hover .gallery-overlay { background: rgba(198,40,40,0.58); }
     .gallery-overlay i {
       color: #fff;
-      font-size: 2rem;
+      font-size: 2.4rem;
       opacity: 0;
       transition: opacity 0.3s;
     }
     .gallery-item:hover .gallery-overlay i { opacity: 1; }
-
     .gallery-caption {
-      padding: 10px 14px;
+      padding: 10px 14px 12px;
       background: #fff;
       font-size: 0.82rem;
       color: #555;
+      line-height: 1.5;
     }
 
-</style>
+    /* ── 프로젝트 레이아웃 ── */
+    .works-project-header {
+      border-left: 4px solid #c62828;
+      padding-left: 14px;
+      margin-bottom: 18px;
+    }
+    .works-cat-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      padding: 3px 11px;
+      border-radius: 20px;
+      margin-bottom: 7px;
+    }
+    .badge-elec  { background: rgba(198,40,40,0.10); color: #c62828; }
+    .badge-green { background: rgba(46,125,50,0.10); color: #2e7d32; }
+    .works-project-title { font-size: 1.2rem; font-weight: 700; color: #1c1c2c; margin-bottom: 4px; }
+    .works-project-desc  { font-size: 0.9rem; color: #666; margin-bottom: 0; }
+
+    .works-divider { border: 0; border-top: 1px solid #eee; margin: 0; }
+
+    /* ── 공정 단계 리스트 ── */
+    .process-steps { list-style: none; padding: 0; margin: 0; }
+    .process-steps li {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      padding: 9px 0;
+      border-bottom: 1px solid #f2f2f2;
+      font-size: 0.88rem;
+      color: #444;
+      line-height: 1.55;
+    }
+    .process-steps li:last-child { border-bottom: none; }
+    .step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 22px;
+      height: 22px;
+      background: #c62828;
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ── 신재생 플레이스홀더 ── */
+    .renew-placeholder-inner {
+      width: 100%;
+      height: 240px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .bg-solar { background: linear-gradient(135deg, #fffde7, #fff8e1); }
+    .bg-wind  { background: linear-gradient(135deg, #e8f5e9, #f1f8e9); }
+    .bg-ess   { background: linear-gradient(135deg, #e3f2fd, #e8eaf6); }
+    .renew-icon  { font-size: 3.4rem; color: rgba(0,0,0,0.18); }
+    .renew-label { font-size: 0.95rem; font-weight: 600; color: #555; margin: 0; }
+    .renew-hint  { font-size: 0.76rem; color: #aaa; }
+
+    /* ── 섹션 구분 헤더 ── */
+    .section-sub-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 48px 0 28px;
+    }
+    .section-sub-header .sub-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #1c1c2c;
+      white-space: nowrap;
+    }
+    .section-sub-header::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #e0e0e0;
+    }
+
+    .photo-hint {
+      display: inline-block;
+      font-size: 0.75rem;
+      background: #fff3cd;
+      color: #856404;
+      border: 1px solid #ffc107;
+      border-radius: 4px;
+      padding: 2px 8px;
+      margin-top: 4px;
+    }
+  </style>
 </head>
 <body class="starter-page-page">
   <div id="site-header"></div>
@@ -80,42 +177,225 @@
 
     <section class="section">
       <div class="container" data-aos="fade-up">
-        <h2 class="h4 mb-2">현장 사진</h2>
-        <p class="text-muted mb-4">수배전·동력설비, 지중배전, 외선공사 등 전기공사 현장 사진입니다.</p>
 
-        <div class="row gy-4" data-aos="fade-up" data-aos-delay="100">
+        <h2 class="h4 mb-1">현장 시공 실적</h2>
+        <p class="text-muted mb-2">수배전·동력설비, 지중배전, 외선공사 등 전기공사 현장 사진입니다.</p>
 
-          <div class="col-lg-4 col-md-6">
-            <div class="gallery-item">
-              <a href="../assets/img/gallery/electric-01.jpg" class="glightbox" data-gallery="works" data-title="지중 전력구 케이블 포설 공사">
-                <img src="../assets/img/gallery/electric-01.jpg" alt="지중 전력구 케이블 포설 공사">
-                <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
-              </a>
-              <div class="gallery-caption">지중 전력구 케이블 포설 공사</div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="gallery-item">
-              <a href="../assets/img/gallery/electric-02.jpg" class="glightbox" data-gallery="works" data-title="수변전설비 점검 공사">
-                <img src="../assets/img/gallery/electric-02.jpg" alt="수변전설비 점검 공사">
-                <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
-              </a>
-              <div class="gallery-caption">수변전설비 점검 공사</div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="gallery-item">
-              <a href="../assets/img/gallery/electric-03.jpg" class="glightbox" data-gallery="works" data-title="도심 지중화 케이블 포설 공사">
-                <img src="../assets/img/gallery/electric-03.jpg" alt="도심 지중화 케이블 포설 공사">
-                <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
-              </a>
-              <div class="gallery-caption">도심 지중화 케이블 포설 공사</div>
-            </div>
-          </div>
-
+        <!-- ════════════════════════════════════════
+             ▸ 전기 · 배전 공사
+        ════════════════════════════════════════ -->
+        <div class="section-sub-header">
+          <span class="sub-title"><i class="bi bi-lightning-charge-fill text-danger me-1"></i> 전기 · 배전 공사</span>
         </div>
+
+        <!-- ── 1. 지중 케이블 포설 공사 ── -->
+        <div class="works-project mb-5" data-aos="fade-up">
+          <div class="works-project-header">
+            <span class="works-cat-badge badge-elec">배전공사</span>
+            <h3 class="works-project-title">지중 전력구 케이블 포설 공사</h3>
+            <p class="works-project-desc">지하에 전력구를 굴착하고 고압 케이블을 포설하는 공정. 도심 지중화 사업의 핵심 공정입니다.</p>
+          </div>
+          <div class="row g-3 align-items-center">
+            <div class="col-lg-5 col-md-6">
+              <div class="gallery-item">
+                <a href="../assets/img/gallery/electric-01.jpg" class="glightbox"
+                   data-gallery="proj-cable" data-title="지중 전력구 케이블 포설 – 완료 현장">
+                  <img src="../assets/img/gallery/electric-01.jpg" alt="지중 케이블 포설 공사">
+                  <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-7 col-md-6">
+              <ol class="process-steps">
+                <li><span class="step-num">1</span><div><strong>굴착 작업</strong> — 도로 또는 부지를 굴착하여 지하 경로 확보</div></li>
+                <li><span class="step-num">2</span><div><strong>관로 설치</strong> — 전선관·보호관 매설 및 콘크리트 보호 처리</div></li>
+                <li><span class="step-num">3</span><div><strong>케이블 포설</strong> — 고압 케이블 인입 및 긴장</div></li>
+                <li><span class="step-num">4</span><div><strong>접속·종단 처리</strong> — 접속함·종단장치 시공</div></li>
+                <li><span class="step-num">5</span><div><strong>복구 및 준공 검사</strong> — 지반 복구·절연시험·준공</div></li>
+              </ol>
+            </div>
+          </div>
+          <!--
+            [과정 사진 추가 방법]
+            assets/img/gallery/ 폴더에 아래 파일명으로 사진을 저장하면 대표사진 클릭 시 자동으로 이어서 보입니다.
+              cable-step-01.jpg ~ cable-step-05.jpg
+          -->
+          <div class="d-none">
+            <a href="../assets/img/gallery/cable-step-01.jpg" class="glightbox" data-gallery="proj-cable" data-title="1단계: 굴착 작업 — 도로 굴착 및 지하 경로 확보"></a>
+            <a href="../assets/img/gallery/cable-step-02.jpg" class="glightbox" data-gallery="proj-cable" data-title="2단계: 관로 설치 — 전선관·보호관 매설"></a>
+            <a href="../assets/img/gallery/cable-step-03.jpg" class="glightbox" data-gallery="proj-cable" data-title="3단계: 케이블 포설 — 고압 케이블 인입 및 긴장"></a>
+            <a href="../assets/img/gallery/cable-step-04.jpg" class="glightbox" data-gallery="proj-cable" data-title="4단계: 접속·종단 처리 — 접속함·종단장치 시공"></a>
+            <a href="../assets/img/gallery/cable-step-05.jpg" class="glightbox" data-gallery="proj-cable" data-title="5단계: 복구 및 준공 검사 — 지반 복구·절연시험·준공"></a>
+          </div>
+        </div>
+
+        <hr class="works-divider">
+
+        <!-- ── 2. 수변전설비 공사 ── -->
+        <div class="works-project mb-5 mt-4" data-aos="fade-up">
+          <div class="works-project-header">
+            <span class="works-cat-badge badge-elec">수변전설비</span>
+            <h3 class="works-project-title">수변전설비 점검 및 교체 공사</h3>
+            <p class="works-project-desc">노후 수변전설비를 교체하고 안전성을 확보하는 공정. 열화상 점검을 포함한 정기 점검도 수행합니다.</p>
+          </div>
+          <div class="row g-3 align-items-center">
+            <div class="col-lg-5 col-md-6">
+              <div class="gallery-item">
+                <a href="../assets/img/gallery/electric-02.jpg" class="glightbox"
+                   data-gallery="proj-substation" data-title="수변전설비 교체 공사 – 완료 현장">
+                  <img src="../assets/img/gallery/electric-02.jpg" alt="수변전설비 공사">
+                  <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-7 col-md-6">
+              <ol class="process-steps">
+                <li><span class="step-num">1</span><div><strong>기존 설비 점검</strong> — 열화상 점검·절연 측정·상태 진단</div></li>
+                <li><span class="step-num">2</span><div><strong>설비 철거 및 교체</strong> — 노후 변압기·개폐기 철거 후 신규 설비 설치</div></li>
+                <li><span class="step-num">3</span><div><strong>배선 및 결선 작업</strong> — 수전선로 접속 및 내부 배선 정리</div></li>
+                <li><span class="step-num">4</span><div><strong>시험 및 준공</strong> — 절연시험·통전시험·최종 점검</div></li>
+              </ol>
+            </div>
+          </div>
+          <!--
+            [과정 사진 추가 방법]
+            assets/img/gallery/ 폴더에 아래 파일명으로 사진을 저장하세요.
+              substation-step-01.jpg ~ substation-step-04.jpg
+          -->
+          <div class="d-none">
+            <a href="../assets/img/gallery/substation-step-01.jpg" class="glightbox" data-gallery="proj-substation" data-title="1단계: 기존 설비 점검 — 열화상 점검·절연 측정"></a>
+            <a href="../assets/img/gallery/substation-step-02.jpg" class="glightbox" data-gallery="proj-substation" data-title="2단계: 설비 철거 및 교체 — 노후 변압기·개폐기 교체"></a>
+            <a href="../assets/img/gallery/substation-step-03.jpg" class="glightbox" data-gallery="proj-substation" data-title="3단계: 배선 및 결선 작업 — 수전선로 접속·배선 정리"></a>
+            <a href="../assets/img/gallery/substation-step-04.jpg" class="glightbox" data-gallery="proj-substation" data-title="4단계: 시험 및 준공 — 절연시험·통전시험·최종 점검"></a>
+          </div>
+        </div>
+
+        <hr class="works-divider">
+
+        <!-- ── 3. 도심 지중화 공사 ── -->
+        <div class="works-project mt-4" data-aos="fade-up">
+          <div class="works-project-header">
+            <span class="works-cat-badge badge-elec">지중화공사</span>
+            <h3 class="works-project-title">도심 지중화 케이블 포설 공사</h3>
+            <p class="works-project-desc">가공 전선을 지중으로 이설하는 도심 미관 개선 및 안전성 향상 공사. 한전 위탁 지중배전 공사 전 공정을 수행합니다.</p>
+          </div>
+          <div class="row g-3 align-items-center">
+            <div class="col-lg-5 col-md-6">
+              <div class="gallery-item">
+                <a href="../assets/img/gallery/electric-03.jpg" class="glightbox"
+                   data-gallery="proj-urban" data-title="도심 지중화 케이블 포설 – 완료 현장">
+                  <img src="../assets/img/gallery/electric-03.jpg" alt="도심 지중화 공사">
+                  <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-7 col-md-6">
+              <ol class="process-steps">
+                <li><span class="step-num">1</span><div><strong>도로 굴착</strong> — 경로 측량 후 도로 및 보도 굴착</div></li>
+                <li><span class="step-num">2</span><div><strong>관로 포설 및 되메우기</strong> — 이중관 포설·콘크리트 보호 처리</div></li>
+                <li><span class="step-num">3</span><div><strong>케이블 인입 및 접속</strong> — 지중 케이블 인입·분기·접속</div></li>
+                <li><span class="step-num">4</span><div><strong>도로 복구 및 준공</strong> — 아스콘 포장 복구·가공선 철거·준공</div></li>
+              </ol>
+            </div>
+          </div>
+          <!--
+            [과정 사진 추가 방법]
+            assets/img/gallery/ 폴더에 아래 파일명으로 사진을 저장하세요.
+              urban-step-01.jpg ~ urban-step-04.jpg
+          -->
+          <div class="d-none">
+            <a href="../assets/img/gallery/urban-step-01.jpg" class="glightbox" data-gallery="proj-urban" data-title="1단계: 도로 굴착 — 경로 측량 후 도로·보도 굴착"></a>
+            <a href="../assets/img/gallery/urban-step-02.jpg" class="glightbox" data-gallery="proj-urban" data-title="2단계: 관로 포설 및 되메우기 — 이중관 포설·콘크리트 보호"></a>
+            <a href="../assets/img/gallery/urban-step-03.jpg" class="glightbox" data-gallery="proj-urban" data-title="3단계: 케이블 인입 및 접속 — 지중 케이블 인입·분기·접속"></a>
+            <a href="../assets/img/gallery/urban-step-04.jpg" class="glightbox" data-gallery="proj-urban" data-title="4단계: 도로 복구 및 준공 — 아스콘 포장 복구·가공선 철거·준공"></a>
+          </div>
+        </div>
+
+
+        <!-- ════════════════════════════════════════
+             ▸ 신재생에너지 공사
+        ════════════════════════════════════════ -->
+        <div class="section-sub-header">
+          <span class="sub-title"><i class="bi bi-sun-fill text-success me-1"></i> 신재생에너지 공사</span>
+        </div>
+        <p class="text-muted mb-4" style="font-size:0.9rem;">신재생 에너지 전문기업 등록업체로서 태양광·풍력 등 신재생에너지 발전설비의 전기 시공 및 전력망 연계 공사를 수행합니다.<br>
+          아래 각 공사 항목을 클릭하면 단계별 과정 사진을 볼 수 있습니다.</p>
+
+        <div class="row g-4" data-aos="fade-up">
+
+          <!-- 태양광 발전설비 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="gallery-item">
+              <a href="../assets/img/gallery/solar-main.jpg" class="glightbox"
+                 data-gallery="proj-solar" data-title="태양광 발전설비 공사 – 시공 완료">
+                <div class="renew-placeholder-inner bg-solar">
+                  <i class="bi bi-sun-fill renew-icon"></i>
+                  <p class="renew-label">태양광 발전설비</p>
+                  <span class="renew-hint">사진 추가 예정</span>
+                </div>
+                <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+              </a>
+              <div class="gallery-caption">태양광 발전설비 공사</div>
+            </div>
+            <!--
+              [과정 사진 추가 방법]  solar-main.jpg / solar-step-01.jpg ~ solar-step-03.jpg
+            -->
+            <div class="d-none">
+              <a href="../assets/img/gallery/solar-step-01.jpg" class="glightbox" data-gallery="proj-solar" data-title="태양광 – 1단계: 구조물(트래커) 시공"></a>
+              <a href="../assets/img/gallery/solar-step-02.jpg" class="glightbox" data-gallery="proj-solar" data-title="태양광 – 2단계: 패널 거치 및 결선"></a>
+              <a href="../assets/img/gallery/solar-step-03.jpg" class="glightbox" data-gallery="proj-solar" data-title="태양광 – 3단계: 인버터·분전반 시공 및 계통 연계"></a>
+            </div>
+          </div>
+
+          <!-- 풍력발전 연계 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="gallery-item">
+              <a href="../assets/img/gallery/wind-main.jpg" class="glightbox"
+                 data-gallery="proj-wind" data-title="풍력발전 전기 연계 공사">
+                <div class="renew-placeholder-inner bg-wind">
+                  <i class="bi bi-wind renew-icon"></i>
+                  <p class="renew-label">풍력발전 연계 공사</p>
+                  <span class="renew-hint">사진 추가 예정</span>
+                </div>
+                <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+              </a>
+              <div class="gallery-caption">풍력발전 전기 연계 공사</div>
+            </div>
+            <!--
+              [과정 사진 추가 방법]  wind-main.jpg / wind-step-01.jpg ~ wind-step-03.jpg
+            -->
+            <div class="d-none">
+              <a href="../assets/img/gallery/wind-step-01.jpg" class="glightbox" data-gallery="proj-wind" data-title="풍력 – 1단계: 기초 전기 공사 (지중 케이블 포설)"></a>
+              <a href="../assets/img/gallery/wind-step-02.jpg" class="glightbox" data-gallery="proj-wind" data-title="풍력 – 2단계: 타워 내부 배선 및 결선"></a>
+              <a href="../assets/img/gallery/wind-step-03.jpg" class="glightbox" data-gallery="proj-wind" data-title="풍력 – 3단계: 계통 연계 및 준공 검사"></a>
+            </div>
+          </div>
+
+          <!-- ESS · 전력망 연계 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="gallery-item">
+              <a href="../assets/img/gallery/ess-main.jpg" class="glightbox"
+                 data-gallery="proj-ess" data-title="ESS·전력망 연계 공사">
+                <div class="renew-placeholder-inner bg-ess">
+                  <i class="bi bi-battery-charging renew-icon"></i>
+                  <p class="renew-label">ESS · 전력망 연계</p>
+                  <span class="renew-hint">사진 추가 예정</span>
+                </div>
+                <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+              </a>
+              <div class="gallery-caption">ESS·전력망 연계 공사</div>
+            </div>
+            <!--
+              [과정 사진 추가 방법]  ess-main.jpg / ess-step-01.jpg ~ ess-step-02.jpg
+            -->
+            <div class="d-none">
+              <a href="../assets/img/gallery/ess-step-01.jpg" class="glightbox" data-gallery="proj-ess" data-title="ESS – 1단계: 설비 설치 및 배선 공사"></a>
+              <a href="../assets/img/gallery/ess-step-02.jpg" class="glightbox" data-gallery="proj-ess" data-title="ESS – 2단계: 계통 연계 및 운전 시험"></a>
+            </div>
+          </div>
+
+        </div><!-- /row -->
+
       </div>
     </section>
 
