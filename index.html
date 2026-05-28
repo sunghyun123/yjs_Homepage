@@ -82,18 +82,48 @@
     }
 
     /* ================================================================
-       HERO  (레드 + 화이트)
+       HERO  (배경 슬라이드쇼 + 화이트 그라디언트 오버레이)
     ================================================================ */
     #hero.hero {
       min-height: 66vh !important;
       padding: 50px 0 78px !important;
-      background: #fff;
+      background: #0d1b2a; /* 이미지 로드 전 fallback */
+      z-index: 1;
+      overflow: hidden;
+    }
+    /* 텍스트 가독성을 위한 그라디언트 오버레이 */
+    #hero.hero::before {
+      background: linear-gradient(
+        100deg,
+        rgba(255,255,255,0.94) 0%,
+        rgba(255,255,255,0.90) 35%,
+        rgba(255,255,255,0.52) 60%,
+        rgba(255,255,255,0.18) 100%
+      ) !important;
+      clip-path: none !important;
       z-index: 1;
     }
-    /* 우측 장식 사선 — 연한 빨강 영역 */
-    #hero.hero::before {
-      background: linear-gradient(135deg, #fff5f5 0%, #fde8e8 100%) !important;
-      clip-path: polygon(28% 0%, 100% 0%, 100% 100%, 12% 100%);
+
+    /* 배경 슬라이더 */
+    .hero-swiper-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .hero-swiper-bg .swiper-wrapper,
+    .hero-swiper-bg .swiper-slide {
+      height: 100%;
+    }
+    .hero-swiper-bg .swiper-slide {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* 히어로 콘텐츠가 오버레이 위에 오도록 */
+    #hero .container {
+      position: relative;
+      z-index: 2;
     }
 
     .hero-label {
@@ -492,15 +522,15 @@
     ============================================================ -->
     <section id="hero" class="hero section">
 
-      <!--
-        [동영상 교체 방법]
-        아래 주석을 해제하고 assets/video/ 폴더에 새 동영상 파일을 저장하세요.
-        동영상 추가 시 #hero.hero 배경을 투명하게, ::before overlay를 어둡게 조정해야 합니다.
-
-        <video class="hero-video-bg" autoplay muted loop playsinline poster="assets/img/hero-bg.jpg">
-          <source src="assets/video/새동영상파일명.mp4" type="video/mp4">
-        </video>
-      -->
+      <!-- 배경 슬라이드쇼 -->
+      <div class="swiper hero-swiper-bg">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" style="background-image: url('assets/img/hero-slides/태양광 단지 전경.png')"></div>
+          <div class="swiper-slide" style="background-image: url('assets/img/hero-slides/풍력발전 단지.png')"></div>
+          <div class="swiper-slide" style="background-image: url('assets/img/hero-slides/전력구 사진.jpg')"></div>
+          <div class="swiper-slide" style="background-image: url('assets/img/hero-slides/변전소 사진.jpg')"></div>
+        </div>
+      </div>
 
       <div class="container">
         <div class="row gy-4 align-items-center">
@@ -885,6 +915,18 @@
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/js/main.js"></script>
+  <script>
+    new Swiper('.hero-swiper-bg', {
+      loop: true,
+      speed: 1800,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+      effect: 'fade',
+      fadeEffect: { crossFade: true },
+    });
+  </script>
 
 </body>
 </html>
