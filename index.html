@@ -155,14 +155,6 @@
       margin-bottom: 18px !important;
     }
     #hero h1 .hl { color: var(--red); }
-    #hero .hero-sub {
-      font-size: 15.5px !important;
-      font-weight: 400;
-      color: #666 !important;
-      line-height: 1.8;
-      margin-bottom: 30px !important;
-    }
-
     .hero-btn-primary {
       display: inline-flex;
       align-items: center;
@@ -343,66 +335,6 @@
     }
 
     /* ================================================================
-       STATS DASHBOARD  (레드 배경)
-    ================================================================ */
-    .stats-dash {
-      background: var(--red);
-      padding: 10px 0 8px !important;
-      position: relative;
-    }
-    .stats-dash::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: rgba(255,255,255,0.25);
-    }
-    .swidget {
-      padding: 4px 14px;
-      text-align: center;
-      position: relative;
-    }
-    .swidget + .swidget::before {
-      content: '';
-      position: absolute;
-      left: 0; top: 15%; bottom: 15%;
-      width: 1px;
-      background: rgba(255,255,255,0.22);
-    }
-    .swidget-num {
-      display: block;
-      font-size: 36px;
-      font-weight: 900;
-      color: #fff;
-      line-height: 1;
-      letter-spacing: -1.5px;
-    }
-    .swidget-unit { font-size: 18px; font-weight: 900; letter-spacing: 0; }
-    .swidget-label {
-      display: block;
-      font-size: 11.5px;
-      font-weight: 600;
-      color: rgba(255,255,255,0.88);
-      margin-top: 4px;
-      letter-spacing: 0.1px;
-    }
-    .swidget-sub {
-      display: block;
-      font-size: 10px;
-      color: rgba(255,255,255,0.65);
-      margin-top: 2px;
-    }
-
-    @media (max-width: 768px) {
-      .swidget-num { font-size: 28px; }
-      .swidget-unit { font-size: 15px; }
-    }
-    @media (max-width: 480px) {
-      .swidget-num { font-size: 24px; }
-      .swidget-unit { font-size: 13px; }
-    }
-
-    /* ================================================================
        ABOUT
     ================================================================ */
     #about.about.section {
@@ -547,11 +479,6 @@
               <span class="hl">고객의 전력 인프라</span>를<br>
               책임집니다
             </h1>
-            <p class="hero-sub">
-              한국전력공사 지중 배전공사 전문 &nbsp;·&nbsp; 무정전·활선공법 특허 보유<br>
-              공인 시공능력평가 검증 전문기업 &nbsp;·&nbsp; 다양한 분야 자격증 보유
-
-            </p>
             <div class="d-flex flex-wrap gap-3">
               <a href="pages/works-electric.html" class="hero-btn-primary">
                 <i class="bi bi-building-fill"></i> 시공실적 보기
@@ -627,49 +554,6 @@
     </div>
 
 
-    <!-- ============================================================
-         3. STATS DASHBOARD
-    ============================================================ -->
-    <div class="stats-dash">
-      <div class="container">
-        <div class="row g-0">
-
-          <div class="col-6 col-md-3">
-            <div class="swidget">
-              <span class="swidget-num">30<span class="swidget-unit">년+</span></span>
-              <span class="swidget-label">축적된 현장 업력</span>
-              <span class="swidget-sub">1995년 창립 이래</span>
-            </div>
-          </div>
-
-          <div class="col-6 col-md-3">
-            <div class="swidget">
-              <span class="swidget-num" style="font-size:36px; letter-spacing:-1px;">한전<span class="swidget-unit" style="font-size:22px;">공식</span></span>
-              <span class="swidget-label">한국전력공사 위탁 배전공사</span>
-              <span class="swidget-sub">지중배전 전 공정 수행</span>
-            </div>
-          </div>
-
-          <div class="col-6 col-md-3">
-            <div class="swidget">
-              <span class="swidget-num" style="font-size:36px; letter-spacing:-1px;">특허<span class="swidget-unit" style="font-size:22px;">기술</span></span>
-              <span class="swidget-label">무정전·활선공법 보유</span>
-              <span class="swidget-sub">DC 전원 유압식 케이블 교체</span>
-            </div>
-          </div>
-
-          <div class="col-6 col-md-3">
-            <div class="swidget">
-              <span class="swidget-num" style="font-size:36px; letter-spacing:-1px;">다양한<span class="swidget-unit" style="font-size:22px;">분야</span></span>
-              <span class="swidget-label">전기·소방·통신·신재생 자격증 보유</span>
-              <span class="swidget-sub">통합 인프라 원스톱 시공</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
 
     <!-- ============================================================
          4. ABOUT
@@ -678,7 +562,7 @@
 
       <div class="container section-title" data-aos="fade-up">
         <h2>About Us</h2>
-        <p><span>안전하고 완벽한 전기공사,</span> <span class="description-title">영전사가 함께합니다</span></p>
+        <p><span>영전사</span> <span class="description-title">회사 소개</span></p>
       </div>
 
       <div class="container">
@@ -690,7 +574,7 @@
 
           <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-left" data-aos-delay="200">
             <div class="about-content ps-0 ps-lg-3">
-              <h3>고객의 안전과 가치를 최우선으로 생각하는 기업</h3>
+              <h3>전기공사업 · 소방시설공사업 · 정보통신공사업 면허 보유 기업</h3>
               <p class="fst-italic">
                 1995년 창립 이래, 전기공사·소방시설공사·정보통신공사·건설업(지반조성·포장)에 이르기까지 인프라 구축의 전 과정을 수행하는 종합 역량을 갖춘 전문기업입니다.
               </p>
@@ -710,7 +594,6 @@
                   </div>
                 </li>
               </ul>
-              <p>공신력 있는 시공능력평가를 통해 검증된 기술력과 자본력을 바탕으로, 고객 여러분의 든든한 인프라 파트너가 되겠습니다.</p>
             </div>
           </div>
 
@@ -840,13 +723,6 @@
                   시공 &amp; 견적 문의
                 </span>
               </div>
-              <h3 style="color:#fff; font-weight:800; font-size:22px; margin-bottom:12px;">
-                전문 엔지니어가 직접 상담합니다
-              </h3>
-              <p style="color:rgba(255,255,255,0.62); font-size:14.5px; line-height:1.78; margin-bottom:20px;">
-                전기공사 관련 시공 문의나 견적 요청은 고객센터로 연락 주시거나<br>
-                이메일을 남겨주시면 전문 엔지니어가 빠르고 정확하게 상담해 드립니다.
-              </p>
               <div style="font-size:38px; font-weight:900; color:#c62828; letter-spacing:-1px; line-height:1; margin-bottom:6px;">
                 031-457-8286
               </div>
