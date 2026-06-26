@@ -1,23 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- base URL 을 실제 도메인으로 바꾼 뒤 배포하세요. -->
-  <url><loc>https://YOUR-DOMAIN.example/index.html</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://YOUR-DOMAIN.example/pages/about-philosophy.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://YOUR-DOMAIN.example/pages/about-vision.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://YOUR-DOMAIN.example/pages/about-history.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://YOUR-DOMAIN.example/pages/about-org.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://YOUR-DOMAIN.example/pages/about-certifications.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://YOUR-DOMAIN.example/pages/about-location.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://YOUR-DOMAIN.example/pages/works-electric.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://YOUR-DOMAIN.example/pages/works-fire.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://YOUR-DOMAIN.example/pages/works-ict.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://YOUR-DOMAIN.example/pages/community-notice.html</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://YOUR-DOMAIN.example/pages/community-library.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://YOUR-DOMAIN.example/pages/community-inquiry.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://YOUR-DOMAIN.example/pages/gallery-electric.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://YOUR-DOMAIN.example/pages/gallery-fire.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://YOUR-DOMAIN.example/pages/gallery-ict.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://YOUR-DOMAIN.example/pages/careers-announce.html</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://YOUR-DOMAIN.example/pages/careers-inquiry.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://YOUR-DOMAIN.example/pages/privacy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://yjselect.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://yjselect.com/pages/about-certifications.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://yjselect.com/pages/about-history.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://yjselect.com/pages/about-location.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yjselect.com/pages/about-org.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://yjselect.com/pages/about-philosophy.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://yjselect.com/pages/about-vision.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://yjselect.com/pages/careers-announce.html</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://yjselect.com/pages/careers-apply.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://yjselect.com/pages/careers-inquiry.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://yjselect.com/pages/community-inquiry.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://yjselect.com/pages/community-library.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://yjselect.com/pages/community-notice.html</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://yjselect.com/pages/privacy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://yjselect.com/pages/works-electric.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yjselect.com/pages/works-fire.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yjselect.com/pages/works-ict.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>

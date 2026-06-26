@@ -38,7 +38,9 @@
       "Bash(npx --yes serve . -p 5500)",
       "Bash(Start-Sleep -Seconds 3)",
       "Bash(powershell *)",
-      "Bash(git *)"
+      "Bash(git *)",
+      "WebFetch(domain:realserver2.com)",
+      "WebFetch(domain:yjselect.com)"
     ]
   }
 }
