@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>영전사 소식 - 영전사</title>
-  <meta name="description" content="㈜영전사 공지 및 소식입니다.">
+  <meta name="description" content="㈜영전사 공지 및 소식입니다. 2026년 하반기 워크샵 현장을 소개합니다.">
   <link rel="canonical" href="https://yjselect.com/pages/community-notice.html">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="㈜영전사">
   <meta property="og:locale" content="ko_KR">
   <meta property="og:title" content="영전사 소식 - 영전사">
-  <meta property="og:description" content="㈜영전사 공지 및 소식입니다.">
+  <meta property="og:description" content="㈜영전사 공지 및 소식입니다. 2026년 하반기 워크샵 현장을 소개합니다.">
   <meta property="og:url" content="https://yjselect.com/pages/community-notice.html">
   <meta property="og:image" content="https://yjselect.com/assets/img/hero-bg.jpg">
   <meta name="twitter:card" content="summary_large_image">
@@ -27,6 +27,146 @@
   <style>
     body { font-family: 'Noto Sans KR', sans-serif; }
     :root { --accent-color: #c62828; --nav-hover-color: #c62828; --nav-dropdown-hover-color: #c62828; }
+
+    /* 소식 1건 = 카드 하나로 감싼다 (소식이 늘어나면 이 블록을 복제) */
+    .post-card {
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      background: #fff;
+      padding: 28px 24px 32px;
+    }
+    .post-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #c62828;
+      background: rgba(198, 40, 40, 0.08);
+      border-radius: 20px;
+      padding: 4px 12px;
+      margin-bottom: 12px;
+    }
+    .post-title {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      line-height: 1.35;
+      margin-bottom: 10px;
+    }
+    .post-meta {
+      font-size: 0.85rem;
+      color: #777;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 16px;
+      align-items: center;
+      padding-bottom: 18px;
+      border-bottom: 1px solid #eee;
+      margin-bottom: 22px;
+    }
+    .post-meta i { color: #c62828; margin-right: 4px; }
+
+    .post-slogan {
+      background: #f7f9fc;
+      border-left: 4px solid #c62828;
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+      color: #444;
+      line-height: 1.7;
+    }
+    .post-slogan strong { color: #1a4f8b; font-weight: 700; }
+
+    .post-lead {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 34px;
+    }
+
+    /* 장소별 구분 제목 — 인증 페이지의 cert-section-title과 같은 결 */
+    .place-title {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: #222;
+      border-left: 4px solid #c62828;
+      padding-left: 12px;
+      margin-bottom: 4px;
+    }
+    .place-no {
+      color: #c62828;
+      font-weight: 700;
+    }
+    .place-sub {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: #888;
+      padding-left: 16px;
+      margin-bottom: 1.2rem;
+    }
+
+    .photo-card {
+      border: 1px solid #e6e6e6;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #fff;
+      height: 100%;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .photo-card:hover {
+      box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+      transform: translateY(-3px);
+    }
+    .photo-img-wrap {
+      width: 100%;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      background: #fafafa;
+      border-bottom: 1px solid #eee;
+      position: relative;
+    }
+    .photo-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+    .photo-card:hover .photo-img-wrap img { transform: scale(1.04); }
+    .photo-zoom {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.45);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .photo-card:hover .photo-zoom { opacity: 1; }
+
+    .photo-body { padding: 14px 16px 16px; }
+    .photo-name {
+      font-size: 0.93rem;
+      font-weight: 600;
+      color: #222;
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+    .photo-desc {
+      font-size: 0.82rem;
+      color: #777;
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
   </style>
 </head>
 <body class="starter-page-page">
@@ -43,13 +183,141 @@
         </nav>
       </div>
     </div>
+
     <section class="section">
       <div class="container" data-aos="fade-up">
-        <div class="text-center py-5">
-          <i class="bi bi-newspaper" style="font-size:3.5rem;color:#ccc;"></i>
-          <p class="mt-3 mb-1 fw-semibold" style="color:#555;">소식을 준비 중입니다.</p>
-          <p class="text-muted small">빠른 시일 내에 업데이트할 예정입니다.</p>
-        </div>
+
+        <!-- ===== 소식 #1 : 2026년 하반기 워크샵 ===== -->
+        <article class="post-card">
+
+          <span class="post-badge">워크샵</span>
+          <h2 class="post-title">㈜영전사 2026년 하반기 워크샵</h2>
+          <div class="post-meta">
+            <span><i class="bi bi-calendar-event"></i>2026. 07. 28</span>
+            <span><i class="bi bi-geo-alt"></i>군포문화예술회관 · 안양시 스마트도시통합센터</span>
+          </div>
+
+          <div class="post-slogan">
+            멈추지 않는 열정, 한계 없는 성장<br>
+            <strong>Run Together, Win Together!</strong><br>
+            하나의 마음으로 2026년 정상까지 향합시다.
+          </div>
+
+          <p class="post-lead">
+            ㈜영전사는 2026년 7월 28일 군포문화예술회관에서 전 임직원이 참석한 하반기 워크샵을 진행했습니다.
+            상반기 시공 실적을 함께 돌아보며 하반기 추진 방향을 공유하고, 현장 안전관리 교육으로 안전 의식을 다졌습니다.
+            이어 안양시 스마트도시통합센터 홍보체험관을 방문해 스마트시티 인프라의 운영 현장을 직접 살펴보았습니다.
+          </p>
+
+          <!-- 1. 군포문화예술회관 -->
+          <div class="place-title"><span class="place-no">01</span>군포문화예술회관</div>
+          <div class="place-sub">상반기 실적 발표 및 안전관리 교육</div>
+          <div class="row g-4 mb-5">
+
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="photo-card">
+                <a href="../assets/img/workshop/영전사 워크샵-군포문화예술회관(실적 발표 및 안전관리 교육).jpg"
+                   class="glightbox" data-gallery="workshop-2026h2"
+                   data-title="전 임직원 단체 기념 촬영 — 군포문화예술회관">
+                  <div class="photo-img-wrap">
+                    <img src="../assets/img/workshop/영전사 워크샵-군포문화예술회관(실적 발표 및 안전관리 교육).jpg"
+                         alt="군포문화예술회관에서 2026년 하반기 워크샵 현수막을 들고 단체 기념 촬영 중인 영전사 임직원">
+                    <span class="photo-zoom"><i class="bi bi-arrows-fullscreen"></i></span>
+                  </div>
+                </a>
+                <div class="photo-body">
+                  <div class="photo-name">단체 기념 촬영</div>
+                  <p class="photo-desc">전 임직원이 하반기 슬로건 현수막과 함께 목표 달성을 다짐했습니다.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 상반기 실적 발표 사진은 슬라이드의 목표·달성률 수치가 판독되어 대외 게시에서 제외
+                 (원본은 리포지터리 밖 'Documents\영전사 워크샵 사진(미게시)' 로 옮겨 보관) -->
+
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="photo-card">
+                <a href="../assets/img/workshop/영전사 워크샵-군포문화예술회관(실적 발표 및 안전관리 교육)2.jpg"
+                   class="glightbox" data-gallery="workshop-2026h2"
+                   data-title="안전사고 예방 교육 — 군포문화예술회관">
+                  <div class="photo-img-wrap">
+                    <img src="../assets/img/workshop/영전사 워크샵-군포문화예술회관(실적 발표 및 안전관리 교육)2.jpg"
+                         alt="2026 안전사고 예방 교육자료를 화면에 띄우고 교육을 받는 임직원" loading="lazy">
+                    <span class="photo-zoom"><i class="bi bi-arrows-fullscreen"></i></span>
+                  </div>
+                </a>
+                <div class="photo-body">
+                  <div class="photo-name">안전사고 예방 교육</div>
+                  <p class="photo-desc">아웃트리거·밀폐공간 작업, 온열질환 대응과 최근 재해사례를 중심으로 현장 안전관리 교육을 받았습니다.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- 2. 안양시 스마트도시통합센터 -->
+          <div class="place-title"><span class="place-no">02</span>안양시 스마트도시통합센터 홍보체험관</div>
+          <div class="place-sub">스마트시티 인프라 견학</div>
+          <div class="row g-4">
+
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="photo-card">
+                <a href="../assets/img/workshop/영전사 워크샵-안양 스마트도시통합센터 홍보체험관 방문.jpg"
+                   class="glightbox" data-gallery="workshop-2026h2"
+                   data-title="통합관제실 견학 — 안양시 스마트도시통합센터">
+                  <div class="photo-img-wrap">
+                    <img src="../assets/img/workshop/영전사 워크샵-안양 스마트도시통합센터 홍보체험관 방문.jpg"
+                         alt="안양시 스마트도시통합센터 관제 화면 앞에서 단체 촬영 중인 영전사 임직원" loading="lazy">
+                    <span class="photo-zoom"><i class="bi bi-arrows-fullscreen"></i></span>
+                  </div>
+                </a>
+                <div class="photo-body">
+                  <div class="photo-name">통합관제실 견학</div>
+                  <p class="photo-desc">도시 전역의 CCTV·교통 정보를 한 화면에서 관제하는 상황실을 둘러보았습니다.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="photo-card">
+                <a href="../assets/img/workshop/영전사 워크샵-안양 스마트도시통합센터 홍보체험관 방문2.jpg"
+                   class="glightbox" data-gallery="workshop-2026h2"
+                   data-title="스마트 교통·안전 인프라 전시 관람 — 안양시 스마트도시통합센터">
+                  <div class="photo-img-wrap">
+                    <img src="../assets/img/workshop/영전사 워크샵-안양 스마트도시통합센터 홍보체험관 방문2.jpg"
+                         alt="버스정보시스템·스마트 스쿨존 등 스마트시티 설비 전시를 관람하는 임직원" loading="lazy">
+                    <span class="photo-zoom"><i class="bi bi-arrows-fullscreen"></i></span>
+                  </div>
+                </a>
+                <div class="photo-body">
+                  <div class="photo-name">스마트 교통·안전 인프라 전시 관람</div>
+                  <p class="photo-desc">버스정보시스템, 스마트 스쿨존, 자율주행버스 등 실제 운영 중인 설비의 구성을 살펴보았습니다.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="photo-card">
+                <a href="../assets/img/workshop/영전사 워크샵-안양 스마트도시통합센터 홍보체험관 방문3.jpg"
+                   class="glightbox" data-gallery="workshop-2026h2"
+                   data-title="재난안전 체험존 관람 — 안양시 스마트도시통합센터">
+                  <div class="photo-img-wrap">
+                    <img src="../assets/img/workshop/영전사 워크샵-안양 스마트도시통합센터 홍보체험관 방문3.jpg"
+                         alt="재난안전 서비스 소개 전시 앞에서 설명을 듣는 임직원" loading="lazy">
+                    <span class="photo-zoom"><i class="bi bi-arrows-fullscreen"></i></span>
+                  </div>
+                </a>
+                <div class="photo-body">
+                  <div class="photo-name">재난안전 체험존 관람</div>
+                  <p class="photo-desc">화재·태풍 등 재난 대응과 안전귀가 서비스 등 시민 안전 서비스 소개를 관람했습니다.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </article>
+
       </div>
     </section>
   </main>
@@ -65,5 +333,8 @@
   <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="../assets/js/site-shell.js" data-active="community-notice"></script>
   <script src="../assets/js/main.js"></script>
+  <script>
+    const lightbox = GLightbox({ selector: '.glightbox' });
+  </script>
 </body>
 </html>
